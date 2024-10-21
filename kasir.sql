@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 21, 2024 at 12:10 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- Host: localhost
+-- Generation Time: Oct 21, 2024 at 06:11 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,8 +32,7 @@ CREATE TABLE `detail_penjualan` (
   `id_penjualan` int(11) DEFAULT NULL,
   `id_produk` int(11) DEFAULT NULL,
   `jumlah_produk` int(11) DEFAULT NULL,
-  `subtotal` int(11) DEFAULT NULL,
-  `id_user` int(11) NOT NULL
+  `subtotal` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -46,16 +45,18 @@ CREATE TABLE `pelanggan` (
   `id_pelanggan` int(11) NOT NULL,
   `nama_pelanggan` varchar(255) DEFAULT NULL,
   `alamat` text DEFAULT NULL,
-  `no_telepon` int(15) DEFAULT NULL,
-  `id_user` int(11) NOT NULL
+  `no_telepon` int(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `pelanggan`
 --
 
-INSERT INTO `pelanggan` (`id_pelanggan`, `nama_pelanggan`, `alamat`, `no_telepon`, `id_user`) VALUES
-(22, 'tes1', '1', 21, 0);
+INSERT INTO `pelanggan` (`id_pelanggan`, `nama_pelanggan`, `alamat`, `no_telepon`) VALUES
+(22, 'admin ganteng', 'mars', 9779998),
+(23, 'tes', '21', 1231),
+(25, 'tes', '123123', 1112312),
+(26, 'makanan', 'cileunyi', 1231881);
 
 -- --------------------------------------------------------
 
@@ -67,8 +68,7 @@ CREATE TABLE `penjualan` (
   `id_penjualan` int(11) NOT NULL,
   `tangal_penjualan` date DEFAULT NULL,
   `total_harga` decimal(10,2) DEFAULT NULL,
-  `id_pelanggan` int(11) DEFAULT NULL,
-  `id_user` int(11) NOT NULL
+  `id_pelanggan` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -80,10 +80,19 @@ CREATE TABLE `penjualan` (
 CREATE TABLE `produk` (
   `id_produk` int(11) NOT NULL,
   `nama_produk` varchar(255) DEFAULT NULL,
-  `harga` decimal(10,2) DEFAULT NULL,
-  `stok` int(11) DEFAULT NULL,
-  `id_user` int(11) NOT NULL
+  `harga` int(10) DEFAULT NULL,
+  `stok` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `produk`
+--
+
+INSERT INTO `produk` (`id_produk`, `nama_produk`, `harga`, `stok`) VALUES
+(1, 'mie basi', 80002, 76),
+(3, 'enak', 21123, 11231),
+(4, 'telur', 30000, 80),
+(5, 'burger ayam', 23, 11);
 
 -- --------------------------------------------------------
 
@@ -157,7 +166,7 @@ ALTER TABLE `detail_penjualan`
 -- AUTO_INCREMENT for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `penjualan`
@@ -169,7 +178,7 @@ ALTER TABLE `penjualan`
 -- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `user`
