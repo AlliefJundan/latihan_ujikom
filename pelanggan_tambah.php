@@ -5,11 +5,12 @@ if(isset($_POST['nama_pelanggan'])) {
     $no_telepon = $_POST['no_telepon'];
 
     $query = mysqli_query($koneksi, "INSERT INTO pelanggan(nama_pelanggan,alamat,no_telepon) VALUES('$nama','$alamat','$no_telepon')");
-    if($query) {
-        echo '<script>alert("Tambah data berhasil");</script>';
-    } else  {
-        echo '<script>alert("Tambah data gagal");</script>';
+    if ($query) {
+        echo '<script>alert("Tambah data berhasil"); location.href="?page=pelanggan"</script>';
+    } else {
+        echo '<script>alert("Tambah data gagal: ' . mysqli_error($koneksi) . '");</script>';
     }
+    
 }
 ?>
 

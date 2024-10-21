@@ -1,7 +1,7 @@
 <?php
 include "koneksi.php";
 if (!isset($_SESSION['user'])) {
-    header('location:login.php');
+    header(header: 'location:login.php');
 }
 ?>
 
@@ -47,7 +47,7 @@ if (!isset($_SESSION['user'])) {
                     <li>
                         <hr class="dropdown-divider" />
                     </li>
-                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                    <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                 </ul>
             </li>
         </ul>
@@ -68,19 +68,16 @@ if (!isset($_SESSION['user'])) {
                         </a>
                         <a class="nav-link" href="?page=produk">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                            Produk
+                            Produk/Barang
                         </a>
-                        <a class="nav-link" href="?page=barang">
+                        
+                        <a class="nav-link" href="?page=pembelian">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                            barang
-                        </a>
-                        <a class="nav-link" href="?page=penjualan">
-                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                            penjualan
+                            Pembelian
                         </a>
                         <a class="nav-link" href="logout.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            logout
+                            Logout
                         </a>
                     </div>
                 </div>

@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if(mysqli_num_rows($cek) > 0) {
         $data = mysqli_fetch_array($cek);
         $_SESSION['user'] = $data;
-        echo '<script>alert("Selamat datang"); location.href="index.php"</script>';
+        header(header : 'location:index.php');
     }else {
         echo '<script>alert("Username atau Password salah");</script>';
     }
