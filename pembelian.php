@@ -16,7 +16,7 @@
         </thead>
         <tbody>
             <?php
-            $query = mysqli_query($koneksi, "SELECT * FROM penjualan LEFT JOIN pelanggan on pelanggan.id_pelanggan = penjualan.id_penjualan");
+            $query = mysqli_query($koneksi, "SELECT * FROM penjualan LEFT JOIN pelanggan ON pelanggan.id_pelanggan = penjualan.id_pelanggan");
             while ($data = mysqli_fetch_array($query)) {
             ?>
                 <tr>
@@ -35,4 +35,4 @@
         </tbody>
     </table>
 
-    </div>
+</div>

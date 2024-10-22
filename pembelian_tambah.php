@@ -4,9 +4,8 @@ if (isset($_POST["id_pelanggan"])) {
     $id_pelanggan = $_POST['id_pelanggan'];
     $produk = $_POST['produk'];
     $total = 0;
-    $tanggal = date('Y/m/d');
 
-    $query = mysqli_query($koneksi, "INSERT INTO penjualan(tanggal_penjualan, id_penjualan) VALUES('$tanggal', '$id_pelanggan') ");
+    $query = mysqli_query($koneksi, "INSERT INTO penjualan(tanggal_penjualan, id_penjualan) VALUES(NOW(), '$id_pelanggan') ");
     $idTerakhir = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM penjualan ORDER BY id_penjualan DESC"));
     $id_penjualan = $idTerakhir['id_penjualan'];
 
