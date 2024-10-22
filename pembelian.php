@@ -1,7 +1,7 @@
-<class="container-fluid px-4">
-    <h1 class="mt-4">Produk</h1>
+<div class="container-fluid px-4">
+    <h1 class="mt-4">Pembelian</h1>
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item active">Produk</li>
+        <li class="breadcrumb-item active">Pembelian</li>
     </ol>
     <a href="?page=pembelian_tambah" class="btn btn-primary"> + Tambah Data</a>
     <hr>

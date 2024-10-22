@@ -1,39 +1,35 @@
 <?php
-if (isset($_POST['id_pelanggan'])) {
+if (isset($_POST["id_pelanggan"])) {
+
     $id_pelanggan = $_POST['id_pelanggan'];
     $produk = $_POST['produk'];
     $total = 0;
     $tanggal = date('Y/m/d');
 
-    $query = mysqli_query($koneksi, "INSERT INTO penjualan(tanggal_penjualan,total_harga,id_pelanggan) VALUES('$tanggal','$total')");
-
-    $idTerakhir = mysqli_fetch_array(mysqli_query($koneksi,"SELECT*FROM penjualan ORDER BY id_penjualan DESC"));
+    $query = mysqli_query($koneksi, "INSERT INTO penjualan(tanggal_penjualan, id_penjualan) VALUES('$tanggal', '$id_pelanggan') ");
+    $idTerakhir = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM penjualan ORDER BY id_penjualan DESC"));
     $id_penjualan = $idTerakhir['id_penjualan'];
 
-    foreach ($produk as $key => $val) {
-        $pr = mysqli_fetch_array(mysqli_query($koneksi,"SELECT*FROM produk WHERE id_produk=$key"));
 
-        $sub = $val * $pr['harga']; 
+    foreach ($produk as $key => $val) {
+        $pr = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM produk WHERE id_produk=$key"));
+        $sub = $val * $pr['harga'];
         $total += $sub;
 
-        $query = mysqli_query($koneksi, "INSERT INTO detail_penjualan(id_penjualan,jumlah_produk,subtotal) VALUES('$id_penjualan','$key','$val', '$sub')");
-
+        $query = mysqli_query($koneksi, "INSERT INTO detail_penjualan(id_penjualan, id_produk, jumlah_produk, subtotal) VALUES('$id_penjualan', '$key', '$val', '$sub') ");
     }
+
     $query = mysqli_query($koneksi, "UPDATE penjualan SET total_harga = $total WHERE id_penjualan = $id_penjualan");
-
-
-
-
     if ($query) {
-        echo '<script>alert("Tambah data berhasil"); location.href="?page=penjualan"</script>';
+        echo '<script>alert("Tambah data berhasil"); location.href="?page=pembelian"</script>';
     } else {
         echo '<script>alert("Tambah data gagal: ' . mysqli_error($koneksi) . '");</script>';
     }
-
 }
+
 ?>
 
-<class="container-fluid px-4">
+<div class="container-fluid px-4">
     <h1 class="mt-4">Penjualan</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item active">Penjualan</li>
@@ -66,7 +62,8 @@ if (isset($_POST['id_pelanggan'])) {
                 <tr>
                     <td><?php echo $produk['nama_produk'] . ' (Stok : ' . $produk['stok'] . ')' ?></td>
                     <td>:</td>
-                    <td><input class="form-control" max="<?php echo $produk['stok'];?>" type="number" step="0" name="produk[<?php echo $produk['id_produk'] ?>]">
+                    <td><input class="form-control" max="<?php echo $produk['stok']; ?>" type="number" step="0"
+                            name="produk[<?php echo $produk['id_produk'] ?>]">
                     </td>
                 </tr>
                 <?php
@@ -84,4 +81,4 @@ if (isset($_POST['id_pelanggan'])) {
         </table>
 
     </form>
-    </div>
+</div>

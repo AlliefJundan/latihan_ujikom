@@ -17,7 +17,7 @@ $query = mysqli_query($koneksi,"SELECT * FROM produk WHERE id_produk=$id");
 $data = mysqli_fetch_array($query);
 ?>
 
-<class="container-fluid px-4">
+<div class="container-fluid px-4">
     <h1 class="mt-4">produk</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item active">Produk</li>

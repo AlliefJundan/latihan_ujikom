@@ -17,7 +17,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM pelanggan WHERE id_pelanggan = '$
 $data = mysqli_fetch_array($query);
 ?>
 
-<class="container-fluidpx-4">
+<div class="container-fluidpx-4">
     <h1 class="mt-4">Pelanggan</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item active">Pelanggan</li>
