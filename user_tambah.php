@@ -35,24 +35,26 @@ if (isset($_POST['nama'])) {
                 <td><input class="form-control" type="text" name="username"></td>
             </tr>
             <tr>
-                <td>Password`</td>
+                <td>Password</td>
                 <td>:</td>
                 <td><input class="form-control" type="text" step="0" name="password"></td>
             </tr>
             <tr>
                 <td>Level</td>
                 <td>:</td>
-                <td><select class="form-control form-select" name="level" >
-                        <option value="admin">petugas</option>
-                        <option value="editor">admin</option>
-                    </select></td>
+                <td>
+                    <select class="form-control form-select" name="level">
+                        <option value="admin" <?php echo ($data['level'] == 'admin') ? 'selected' : ''; ?>>admin</option>
+                        <option value="petugas" <?php echo ($data['level'] == 'petugas') ? 'selected' : ''; ?>>petugas
+                        </option>
+                    </select>
+                </td>
             </tr>
             <tr>
                 <td></td>
                 <td></td>
                 <td>
                     <button type="submit" class="btn btn-primary">submit</button>
-                    <button type="reset" class="btn btn-danger">Reset</button>
                 </td>
             </tr>
 

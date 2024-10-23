@@ -1,4 +1,5 @@
 <?php
+$id = $_GET['id'];
 if (isset($_POST['nama'])) {
     $nama = $_POST['nama'];
     $username = $_POST['username'];
@@ -14,7 +15,7 @@ if (isset($_POST['nama'])) {
 }
 $query = mysqli_query($koneksi, "SELECT * FROM user WHERE id_user=$id");
 $data = mysqli_fetch_array($query);
-    ?>
+?>
 
 <div class="container-fluid px-4">
     <h1 class="mt-4">Tambah Data Akun</h1>
@@ -22,7 +23,6 @@ $data = mysqli_fetch_array($query);
     </ol>
     <a href="?page=user" class="btn btn-primary">Kembali</a>
     <hr>
-
     <form method="post">
         <table>
             <tr>
@@ -37,7 +37,7 @@ $data = mysqli_fetch_array($query);
                 </td>
             </tr>
             <tr>
-                <td>Password`</td>
+                <td>Password</td>
                 <td>:</td>
                 <td><input class="form-control" value="<?php echo $data['password']; ?>" type="text" step="0"
                         name="password"></td>
@@ -45,17 +45,20 @@ $data = mysqli_fetch_array($query);
             <tr>
                 <td>Level</td>
                 <td>:</td>
-                <td><select class="form-control form-select" name="level">
-                        <option value="admin">petugas</option>
-                        <option value="editor">admin</option>
-                    </select></td>
+                <td>
+                    <select class="form-control form-select" name="level">
+                        <option value="admin" <?php echo ($data['level'] == 'admin') ? 'selected' : ''; ?>>admin</option>
+                        <option value="petugas" <?php echo ($data['level'] == 'petugas') ? 'selected' : ''; ?>>petugas
+                        </option>
+                    </select>
+                </td>
             </tr>
+
             <tr>
                 <td></td>
                 <td></td>
                 <td>
                     <button type="submit" class="btn btn-primary">submit</button>
-                    <button type="reset" class="btn btn-danger">Reset</button>
                 </td>
             </tr>
 

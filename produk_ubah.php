@@ -18,7 +18,7 @@ $data = mysqli_fetch_array($query);
 ?>
 
 <div class="container-fluid px-4">
-    <h1 class="mt-4">produk</h1>
+    <h1 class="mt-4">Produk</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item active">Produk</li>
     </ol>
@@ -47,7 +47,6 @@ $data = mysqli_fetch_array($query);
             <td></td>
             <td>
                 <button type="submit" class="btn btn-primary">submit</button>
-                <button type="reset" class="btn btn-danger">Reset</button>  
             </td>
         </tr>
 

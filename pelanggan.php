@@ -8,6 +8,7 @@
     <table class="table">
         <thead>
             <tr>
+                <th>No</th>
                 <th>Nama Pelanggan</th>
                 <th>Alamat</th>
                 <th>No Telepon</th>
@@ -16,22 +17,26 @@
         </thead>
         <tbody>
             <?php
+            $nomor = 1;
             $query = mysqli_query($koneksi, "SELECT * FROM pelanggan");
             while ($data = mysqli_fetch_array($query)) {
-            ?>
+                ?>
                 <tr>
+                    <th scope="row"><?php echo $nomor++; ?></th>
                     <td><?php echo $data['nama_pelanggan']; ?></td>
                     <td><?php echo $data['alamat']; ?></td>
                     <td><?php echo $data['no_telepon']; ?></td>
                     <td>
-                        <a href="?page=pelanggan_ubah&&id=<?php echo $data['id_pelanggan']; ?>" class="btn btn-primary">Ubah</a>
-                        <a href="?page=pelanggan_hapus&&id=<?php echo $data['id_pelanggan']; ?>" class="btn btn-danger">Hapus</a>
+                        <a href="?page=pelanggan_ubah&&id=<?php echo $data['id_pelanggan']; ?>"
+                            class="btn btn-primary">Ubah</a>
+                        <a href="?page=pelanggan_hapus&&id=<?php echo $data['id_pelanggan']; ?>"
+                            class="btn btn-danger">Hapus</a>
                     </td>
                 </tr>
-            <?php
+                <?php
             }
             ?>
         </tbody>
     </table>
 
-    </div>
+</div>

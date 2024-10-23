@@ -8,7 +8,8 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Tanggan Pembelian</th>
+                <th>No</th>
+                <th>Tanggal Pembelian</th>
                 <th>Pelanggan</th>
                 <th>Total Harga</th>
                 <th>Aksi</th>
@@ -16,23 +17,24 @@
         </thead>
         <tbody>
             <?php
-            $query = mysqli_query($koneksi, "SELECT * FROM penjualan LEFT JOIN pelanggan ON pelanggan.id_pelanggan = penjualan.id_pelanggan");
+            $nomor = 1; 
+            $query = mysqli_query($koneksi, "SELECT * FROM penjualan LEFT JOIN pelanggan ON pelanggan.id_pelanggan = penjualan.id_pelanggan ORDER BY tanggal_penjualan DESC");
             while ($data = mysqli_fetch_array($query)) {
-            ?>
+                ?>
                 <tr>
+                    <th scope="row"><?php echo $nomor++; ?></th>
                     <td><?php echo $data['tanggal_penjualan']; ?></td>
                     <td><?php echo $data['nama_pelanggan']; ?></td>
-                    <td><?php echo $data['total_harga']; ?></td>
+                    <td><?php echo 'Rp ' . number_format($data['total_harga'], 0, ',', '.'); ?></td>
 
                     <td>
                         <a href="?page=penjualan_detail&&id=<?php echo $data['id_penjualan']; ?>" class="btn btn-primary">Detail</a>
                         <a href="?page=penjualan_hapus&&id=<?php echo $data['id_penjualan']; ?>" class="btn btn-danger">Hapus</a>
                     </td>
                 </tr>
-            <?php
+                <?php
             }
             ?>
         </tbody>
     </table>
-
 </div>

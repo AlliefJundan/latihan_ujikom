@@ -44,7 +44,6 @@ if(isset($_POST['nama_produk'])) {
             <td></td>
             <td>
                 <button type="submit" class="btn btn-primary">submit</button>
-                <button type="reset" class="btn btn-danger">Reset</button>  
             </td>
         </tr>
 

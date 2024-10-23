@@ -7,7 +7,7 @@ if (isset($_POST['nama_pelanggan'])) {
 
     $query = mysqli_query($koneksi, "UPDATE pelanggan set nama_pelanggan ='$nama', alamat = '$alamat', no_telepon='$no_telepon' WHERE id_pelanggan =$id");
     if ($query) {
-        echo '<script>alert("Ubah data berhasil");</script>';
+        echo '<script>alert("Ubah data berhasil"); location.href="?page=pelanggan"</script>';
     } else {
         echo '<script>alert("Ubah data gagal: ' . mysqli_error($koneksi) . '");</script>';
     }
@@ -17,7 +17,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM pelanggan WHERE id_pelanggan = '$
 $data = mysqli_fetch_array($query);
 ?>
 
-<div class="container-fluidpx-4">
+<div class="container-fluid px-4">
     <h1 class="mt-4">Pelanggan</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item active">Pelanggan</li>
@@ -49,7 +49,6 @@ $data = mysqli_fetch_array($query);
                 <td></td>
                 <td>
                     <button type="submit" class="btn btn-primary">submit</button>
-                    <button type="reset" class="btn btn-danger">Reset</button>
                 </td>
             </tr>
 

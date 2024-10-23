@@ -8,6 +8,7 @@
     <table class="table">
         <thead>
             <tr>
+                <th>No</th>
                 <th>ID User</th>
                 <th>Nama</th>
                 <th>Username</th>
@@ -18,10 +19,13 @@
         </thead>
         <tbody>
             <?php
+            $nomor = 1;
             $query = mysqli_query($koneksi, "SELECT * FROM user");
             while ($data = mysqli_fetch_array($query)) {
             ?>
                 <tr>
+                <th scope="row"><?php echo $nomor++; ?></th>
+
                     <td><?php echo $data['id_user']; ?></td>
                     <td><?php echo $data['nama']; ?></td>
                     <td><?php echo $data['username']; ?></td>

@@ -8,6 +8,7 @@
     <table class="table">
         <thead>
             <tr>
+                <th>No</th>
                 <th>Nama Produk</th>
                 <th>Harga</th>
                 <th>Stok</th>
@@ -16,10 +17,12 @@
         </thead>
         <tbody>
             <?php
+            $nomor = 1;
             $query = mysqli_query($koneksi, "SELECT * FROM produk");
             while ($data = mysqli_fetch_array($query)) {
-            ?>
+                ?>
                 <tr>
+                    <th scope="row"><?php echo $nomor++; ?></th>
                     <td><?php echo $data['nama_produk']; ?></td>
                     <td><?php echo 'Rp ' . number_format($data['harga'], 0, ',', '.'); ?></td>
                     <td><?php echo $data['stok']; ?></td>
@@ -28,10 +31,10 @@
                         <a href="?page=produk_hapus&&id=<?php echo $data['id_produk']; ?>" class="btn btn-danger">Hapus</a>
                     </td>
                 </tr>
-            <?php
+                <?php
             }
             ?>
         </tbody>
     </table>
 
-    </div>
+</div>
