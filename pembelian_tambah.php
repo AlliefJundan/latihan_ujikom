@@ -31,6 +31,7 @@ if (isset($_POST["id_pelanggan"])) {
                 $kurang = mysqli_query($koneksi, "UPDATE produk SET stok = stok - $val WHERE id_produk = $key");
             }
         }
+
     }
 
     $query = mysqli_query($koneksi, "UPDATE penjualan SET id_pelanggan = $id_pelanggan, tanggal_penjualan = NOW(),total_harga = $total WHERE id_penjualan = $id_penjualan");
@@ -51,7 +52,6 @@ if (isset($_POST["id_pelanggan"])) {
     </ol>
     <a href="?page=pembelian" class="btn btn-primary">Kembali</a>
     <hr>
-
     <form method="post" id="form-penjualan">
         <table>
             <!-- Nama Pelanggan -->
