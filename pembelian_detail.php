@@ -32,6 +32,8 @@ $total_harga = $info['total_harga'];
         <li class="breadcrumb-item active">Struk Penjualan</li>
     </ol>
     <a href="?page=pembelian" class="btn btn-primary">Kembali</a>
+    <a href="cetak_struk.php?id=<?php echo $id_penjualan; ?>" target="_blank" class="btn btn-success">Cetak Struk</a>
+
     <hr>
     <p><strong>Tanggal Pembelian:</strong> <?php echo $tanggal_penjualan; ?></p>
     <p><strong>Nama Pelanggan:</strong> <?php echo $nama_pelanggan; ?></p>

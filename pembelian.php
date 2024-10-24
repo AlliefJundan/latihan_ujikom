@@ -4,7 +4,19 @@
         <li class="breadcrumb-item active">Pembelian</li>
     </ol>
     <a href="?page=pembelian_tambah" class="btn btn-primary"> + Tambah Data</a>
-    <a href="?page.cetak" type="button" class="btn btn-success" target="_blank">Cetak</a>
+
+    <!-- Dropdown untuk memilih rentang waktu cetak -->
+    <form action="cetak.php" method="GET" target="_blank" class="d-inline">
+        <button type="submit" class="btn btn-success">Cetak</button>
+        <label for="filter_waktu">Cetak untuk:</label>
+        <select name="rentang_waktu" id="filter_waktu" class="form-select" style="width: auto; display: inline-block;">
+            <option value="1">1 Hari</option>
+            <option value="3">3 Hari</option>
+            <option value="7">7 Hari</option>
+            <option value="30">30 Hari</option>
+        </select>
+    </form>
+
     <hr>
     <table class="table">
         <thead>
