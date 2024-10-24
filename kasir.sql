@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 23, 2024 at 06:24 AM
+-- Generation Time: Oct 24, 2024 at 08:44 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -40,17 +40,14 @@ CREATE TABLE `detail_penjualan` (
 --
 
 INSERT INTO `detail_penjualan` (`id_detail`, `id_penjualan`, `id_produk`, `jumlah_produk`, `subtotal`) VALUES
-(67, 30, 1, 1, 8000),
-(68, 30, 7, 1, 12000),
-(69, 31, 1, 2, 16000),
-(70, 31, 7, 2, 24000),
-(71, 32, 1, 1, 8000),
-(72, 32, 7, 2, 24000),
-(73, 33, 1, 2, 16000),
-(74, 34, 7, 1, 12000),
-(75, 35, 1, 2, 16000),
-(76, 36, 1, 2, 16000),
-(77, 37, 1, 172, 1376000);
+(101, 48, 1, 21, 168000),
+(102, 48, 7, 16, 56000),
+(103, 48, 8, 55, 165000),
+(104, 48, 9, 70, 1750000),
+(105, 48, 10, 80, 80000),
+(106, 49, 1, 1, 8000),
+(107, 50, 1, 7, 56000),
+(108, 51, 1, 2, 16000);
 
 -- --------------------------------------------------------
 
@@ -62,7 +59,7 @@ CREATE TABLE `pelanggan` (
   `id_pelanggan` int(11) NOT NULL,
   `nama_pelanggan` varchar(255) DEFAULT NULL,
   `alamat` text DEFAULT NULL,
-  `no_telepon` int(15) DEFAULT NULL
+  `no_telepon` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -70,10 +67,8 @@ CREATE TABLE `pelanggan` (
 --
 
 INSERT INTO `pelanggan` (`id_pelanggan`, `nama_pelanggan`, `alamat`, `no_telepon`) VALUES
-(22, 'ujang', 'mars1', 1),
-(23, 'budi', '21', 1231),
-(25, 'agus', '123123', 1112312),
-(26, 'agung', 'cileunyi', 1231881);
+(33, '12312', '12312', '6282318478800'),
+(34, 'Asep Karet', 'Jalan Asih nomor 69', '628772816271');
 
 -- --------------------------------------------------------
 
@@ -93,14 +88,10 @@ CREATE TABLE `penjualan` (
 --
 
 INSERT INTO `penjualan` (`id_penjualan`, `tanggal_penjualan`, `total_harga`, `id_pelanggan`) VALUES
-(30, '2024-10-23 09:49:13', 20000, 22),
-(31, '2024-10-23 09:49:20', 40000, 22),
-(32, '2024-10-23 09:51:44', 32000, 22),
-(33, '2024-10-23 09:53:51', 16000, 22),
-(34, '2024-10-23 09:55:43', 12000, 23),
-(35, '2024-10-23 10:43:59', 16000, 22),
-(36, '2024-10-23 11:15:46', 16000, 22),
-(37, '2024-10-23 11:16:06', 1376000, 22);
+(48, '2024-09-26 09:55:57', 2219000, 33),
+(49, '2024-10-24 13:18:06', 8000, 33),
+(50, '2024-10-24 13:30:02', 56000, 33),
+(51, '2024-10-24 13:37:40', 16000, 34);
 
 -- --------------------------------------------------------
 
@@ -120,8 +111,11 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`id_produk`, `nama_produk`, `harga`, `stok`) VALUES
-(1, 'mie basi', 8000, 1000),
-(7, 'wow', 12000, 21);
+(1, 'Kaos Kaki Putih', 8000, 11),
+(7, 'Le Minerale 360 mg', 3500, 0),
+(8, 'Indomie Goreng', 3000, 0),
+(9, 'Daging ayam 100g', 25000, 0),
+(10, 'Aqua Gelas', 1000, 0);
 
 -- --------------------------------------------------------
 
@@ -147,9 +141,9 @@ INSERT INTO `user` (`id_user`, `nama`, `username`, `password`, `level`) VALUES
 (12, '123', '123', '202cb962ac59075b964b07152d234b70', 'admin'),
 (13, 'tes', 'tes', '28b662d883b6d76fd96e4ddc5e9ba780', 'admin'),
 (14, 'agus', 'agus', '74be16979710d4c4e7c6647856088456', 'admin'),
-(17, 'asep galon', 'GӨᄂΣMBӨY', '698d51a19d8a121ce581499d7b701668', 'admin'),
-(18, '123', 'petugas', '5293a4cfdc5eb816d91f203825bfda94', 'admin'),
-(22, 'user', 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'petugas');
+(18, 'tes', 'petugas', '1d28426f80d753ce05c6939a1d434517', 'admin'),
+(22, 'user', 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'petugas'),
+(23, 'aku', 'aku', '89ccfac87d8d06db06bf3211cb2d69ed', 'petugas');
 
 --
 -- Indexes for dumped tables
@@ -193,31 +187,31 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `detail_penjualan`
 --
 ALTER TABLE `detail_penjualan`
-  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 
 --
 -- AUTO_INCREMENT for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `penjualan`
 --
 ALTER TABLE `penjualan`
-  MODIFY `id_penjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id_penjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
