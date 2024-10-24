@@ -22,7 +22,8 @@
         <thead>
             <tr>
                 <th>No</th>
-                <th>Tanggal Pembelian</th>
+                <th>ID Pembelian</th>
+                <th>Waktu Pembelian</th>
                 <th>Pelanggan</th>
                 <th>Total Harga</th>
                 <th>Aksi</th>
@@ -36,6 +37,7 @@
                 ?>
                 <tr>
                     <th scope="row"><?php echo $nomor++; ?></th>
+                    <td><?php echo $data['id_penjualan']; ?></td>
                     <td><?php echo $data['tanggal_penjualan']; ?></td>
                     <td><?php echo $data['nama_pelanggan']; ?></td>
                     <td><?php echo 'Rp ' . number_format($data['total_harga'], 0, ',', '.'); ?></td>

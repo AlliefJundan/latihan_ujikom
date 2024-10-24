@@ -24,7 +24,8 @@ $query = mysqli_query($koneksi, "SELECT * FROM penjualan
     <thead>
         <tr>
             <th>No</th>
-            <th>Tanggal Pembelian</th>
+            <th>ID Penjualan</th>
+            <th>Waktu Pembelian</th>
             <th>Pelanggan</th>
             <th>Total Harga</th>
         </tr>
@@ -36,6 +37,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM penjualan
             ?>
             <tr>
                 <th scope="row"><?php echo $nomor++; ?></th>
+                <td><?php echo $data['id_penjualan'];?></td>
                 <td><?php echo $data['tanggal_penjualan']; ?></td>
                 <td><?php echo $data['nama_pelanggan']; ?></td>
                 <td><?php echo 'Rp ' . number_format($data['total_harga'], 0, ',', '.'); ?></td>

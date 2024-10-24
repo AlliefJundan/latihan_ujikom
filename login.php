@@ -1,5 +1,4 @@
 <?php
-session_start();
 include "koneksi.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -76,7 +75,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     </form>
                                 </div>
                                 <div class="card-footer text-center py-3">
-                                    <div class="small"><a href="register.php">Need an account? Sign up!</a></div>
                                 </div>
                             </div>
                         </div>
@@ -88,12 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
                     <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Your Website 2023</div>
-                        <div>
-                            <a href="#">Privacy Policy</a>
-                            &middot;
-                            <a href="#">Terms &amp; Conditions</a>
-                        </div>
+                        <div class="text-muted">Copyright &copy; Your Website 2024</div>
                     </div>
                 </div>
             </footer>

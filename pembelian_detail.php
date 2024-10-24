@@ -35,7 +35,7 @@ $total_harga = $info['total_harga'];
     <a href="cetak_struk.php?id=<?php echo $id_penjualan; ?>" target="_blank" class="btn btn-success">Cetak Struk</a>
 
     <hr>
-    <p><strong>Tanggal Pembelian:</strong> <?php echo $tanggal_penjualan; ?></p>
+    <p><strong>Waktu Pembelian:</strong> <?php echo $tanggal_penjualan; ?></p>
     <p><strong>Nama Pelanggan:</strong> <?php echo $nama_pelanggan; ?></p>
 
     <table class="table table-bordered">

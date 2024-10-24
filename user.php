@@ -1,10 +1,5 @@
 <?php
-session_start();
- if (!isset($_SESSION['level']) || $_SESSION['level'] != 'admin') {
-    echo "Akses ditolak. Hanya admin yang dapat mengakses halaman ini.";
-    header('location:?page=home');
-    exit();
-}
+cek_level();
 ?>
 
 
@@ -23,7 +18,7 @@ session_start();
                 <th>ID User</th>
                 <th>Nama</th>
                 <th>Username</th>
-                <th>Password</th>
+                <!-- <th>Password</th> -->
                 <th>Level</th>
                 <th>Aksi</th>
             </tr>
@@ -39,7 +34,7 @@ session_start();
                     <td><?php echo $data['id_user']; ?></td>
                     <td><?php echo $data['nama']; ?></td>
                     <td><?php echo $data['username']; ?></td>
-                    <td><?php echo $data['password']; ?></td>
+                    <!-- <td><?php echo $data['password']; ?></td> -->
                     <td><?php echo $data['level']; ?></td>
 
                     <td>

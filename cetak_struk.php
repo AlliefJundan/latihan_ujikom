@@ -33,7 +33,7 @@ $total_harga = $info['total_harga'];
 <body>
 
 <!-- Menampilkan informasi pembelian -->
-<p><strong>Tanggal Pembelian:</strong> <?php echo $tanggal_penjualan; ?></p>
+<p><strong>Waktu Pembelian:</strong> <?php echo $tanggal_penjualan; ?></p>
 <p><strong>Nama Pelanggan:</strong> <?php echo $nama_pelanggan; ?></p>
 
 <table border="1" style="width:100%">
