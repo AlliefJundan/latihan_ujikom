@@ -1,4 +1,11 @@
 <?php
+
+session_start();
+ if (!isset($_SESSION['level']) || $_SESSION['level'] != 'admin') {
+    echo "Akses ditolak. Hanya admin yang dapat mengakses halaman ini.";
+    header('location:?page=home');
+    exit();
+}
 $id = $_GET['id'];
 if (isset($_POST['nama'])) {
     $nama = $_POST['nama'];
@@ -24,7 +31,7 @@ $data = mysqli_fetch_array($query);
     <a href="?page=user" class="btn btn-primary">Kembali</a>
     <hr>
     <form method="post">
-        <table>
+        <table class="table table-border">
             <tr>
                 <td width="200">Nama</td>
                 <td width="1">:</td>

@@ -1,4 +1,12 @@
 <?php
+
+session_start();
+ if (!isset($_SESSION['level']) || $_SESSION['level'] != 'admin') {
+    echo "Akses ditolak. Hanya admin yang dapat mengakses halaman ini.";
+    header('location:?page=home');
+    exit();
+}
+
 if (isset($_POST['nama'])) {
     $nama = $_POST['nama'];
     $username = $_POST['username'];
@@ -23,7 +31,7 @@ if (isset($_POST['nama'])) {
     <hr>
 
     <form method="post">
-        <table>
+        <table class="table table-border">
             <tr>
                 <td width="200">Nama</td>
                 <td width="1">:</td>

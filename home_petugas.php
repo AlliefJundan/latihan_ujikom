@@ -1,9 +1,7 @@
 <?php
-session_start();
 include "koneksi.php";
 if (!isset($_SESSION['user'])) {
     header(header: 'location:login.php');
-
 }
 ?>
 
@@ -71,16 +69,11 @@ if (!isset($_SESSION['user'])) {
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             Pembelian
                         </a>
-                            <a class="nav-link" href="?page=user">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                User
-                            </a>                      
                         <a class="nav-link" href="logout.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                             Logout
                         </a>
                     </div>
-
                 </div>
                 <div class="sb-sidenav-footer">
                     <div class="small">Logged in as:</div>

@@ -1,5 +1,5 @@
-<?php   
-if(isset($_POST['nama_produk'])) {
+<?php
+if (isset($_POST['nama_produk'])) {
     $nama = $_POST['nama_produk'];
     $harga = $_POST['harga'];
     $stok = $_POST['stok'];
@@ -10,7 +10,7 @@ if(isset($_POST['nama_produk'])) {
     } else {
         echo '<script>alert("Tambah data gagal: ' . mysqli_error($koneksi) . '");</script>';
     }
-    
+
 }
 ?>
 
@@ -23,7 +23,7 @@ if(isset($_POST['nama_produk'])) {
     <hr>
 
     <form method="post">
-        <table>
+        <table class="table table-border">
             <tr>
                 <td width="200">Nama Produk</td>
                 <td width="1">:</td>
@@ -39,15 +39,15 @@ if(isset($_POST['nama_produk'])) {
                 <td>:</td>
                 <td><input class="form-control" type="number" step="0" name="stok"></td>
             </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td>
-                <button type="submit" class="btn btn-primary">submit</button>
-            </td>
-        </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>
+                    <button type="submit" class="btn btn-primary">submit</button>
+                </td>
+            </tr>
 
         </table>
 
     </form>
-    </div>
+</div>

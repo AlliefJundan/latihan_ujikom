@@ -26,7 +26,7 @@ $data = mysqli_fetch_array($query);
     <hr>
 
     <form method="post">
-        <table>
+    <table class="table table-border">
             <tr>
                 <td width="200">Nama Produk</td>
                 <td width="1">:</td>

@@ -53,7 +53,7 @@ if (isset($_POST["id_pelanggan"])) {
     <a href="?page=pembelian" class="btn btn-primary">Kembali</a>
     <hr>
     <form method="post" id="form-penjualan">
-        <table>
+    <table class="table table-border">
             <!-- Nama Pelanggan -->
             <tr>
                 <td width="200">Nama Pelanggan</td>
@@ -102,7 +102,8 @@ if (isset($_POST["id_pelanggan"])) {
                 <td></td>
                 <td></td>
                 <td>
-                    <button type="submit" class="btn btn-primary">submit</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="reset" class="btn btn-danger">Reset</button>
                 </td>
             </tr>
         </table>

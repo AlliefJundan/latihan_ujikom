@@ -29,8 +29,8 @@
                     <td>
                         <a href="?page=pelanggan_ubah&&id=<?php echo $data['id_pelanggan']; ?>"
                             class="btn btn-primary">Ubah</a>
-                        <a href="?page=pelanggan_hapus&&id=<?php echo $data['id_pelanggan']; ?>"
-                            class="btn btn-danger">Hapus</a>
+                        <!-- <a href="?page=pelanggan_hapus&&id=<?php echo $data['id_pelanggan']; ?>"
+                            class="btn btn-danger">Hapus</a> -->
                     </td>
                 </tr>
                 <?php
